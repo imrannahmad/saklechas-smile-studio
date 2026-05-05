@@ -34,10 +34,14 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Saklecha's Dental & Implant Centre — Best Dentist in Indore" },
       { name: "description", content: "Top-rated dental, braces & implant clinic in Indore. Painless treatment, modern equipment, 4.9★ Google rating. Book your appointment today." },
-      { property: "og:title", content: "Saklecha's Dental & Implant Centre — Indore" },
-      { property: "og:description", content: "Painless dental care, braces & implants in Indore. 2000+ happy patients." },
+      { property: "og:title", content: "Saklecha's Dental & Implant Centre — Best Dentist in Indore" },
+      { property: "og:description", content: "Top-rated dental, braces & implant clinic in Indore. Painless treatment, modern equipment, 4.9★ Google rating. Book your appointment today." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Saklecha's Dental & Implant Centre — Best Dentist in Indore" },
+      { name: "twitter:description", content: "Top-rated dental, braces & implant clinic in Indore. Painless treatment, modern equipment, 4.9★ Google rating. Book your appointment today." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8dd5e10d-542d-4dfc-bb77-866b47c4c992/id-preview-46f88438--bd7d19f1-7b2a-4134-8271-f37f4ca94f72.lovable.app-1777957686099.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/8dd5e10d-542d-4dfc-bb77-866b47c4c992/id-preview-46f88438--bd7d19f1-7b2a-4134-8271-f37f4ca94f72.lovable.app-1777957686099.png" },
     ],
     links: [
       {
