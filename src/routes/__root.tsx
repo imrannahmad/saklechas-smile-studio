@@ -1,6 +1,9 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
+import { MobileCTA } from "@/components/site/MobileCTA";
 
 function NotFoundComponent() {
   return (
@@ -29,14 +32,12 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Saklecha's Dental & Implant Centre — Best Dentist in Indore" },
+      { name: "description", content: "Top-rated dental, braces & implant clinic in Indore. Painless treatment, modern equipment, 4.9★ Google rating. Book your appointment today." },
+      { property: "og:title", content: "Saklecha's Dental & Implant Centre — Indore" },
+      { property: "og:description", content: "Painless dental care, braces & implants in Indore. 2000+ happy patients." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
@@ -65,5 +66,14 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
+      <main className="flex-1 pb-20 md:pb-0">
+        <Outlet />
+      </main>
+      <Footer />
+      <MobileCTA />
+    </div>
+  );
 }
