@@ -10,7 +10,4 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 // Lovable sandbox preview keeps working because these only affect `vite build`.
 export default defineConfig({
   cloudflare: false,
-  tanstackStart: {
-    target: "vercel",
-  },
 });
