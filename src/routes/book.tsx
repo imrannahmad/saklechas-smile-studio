@@ -16,7 +16,7 @@ export const Route = createFileRoute("/book")({
 });
 
 function BookPage() {
-  const [form, setForm] = useState({ name: "", phone: "", service: SERVICES[0].title, date: "", note: "" });
+  const [form, setForm] = useState<{ name: string; phone: string; service: string; date: string; note: string }>({ name: "", phone: "", service: SERVICES[0].title, date: "", note: "" });
 
   function submit(e: React.FormEvent) {
     e.preventDefault();
