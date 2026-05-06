@@ -6,4 +6,8 @@
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+// Vercel deployment: disable Cloudflare build plugin and target Vercel preset.
+// Lovable sandbox preview keeps working because these only affect `vite build`.
+export default defineConfig({
+  cloudflare: false,
+});
