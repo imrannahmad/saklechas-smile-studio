@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Star, Phone, Calendar, ShieldCheck, Sparkles, HeartPulse, Clock, BadgeIndianRupee, Stethoscope, Smile, ArrowRight, MapPin, CheckCircle2 } from "lucide-react";
 import heroSmile from "@/assets/hero-smile.jpg";
 import teamDoctors from "@/assets/team-doctors.jpg";
@@ -9,18 +9,6 @@ import clinicPatient from "@/assets/clinic-patient.jpg";
 import drInternational from "@/assets/dr-international.jpg";
 import { CLINIC, SERVICES } from "@/lib/clinic";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Saklecha's Dental & Implant Centre — Best Dentist in Indore" },
-      { name: "description", content: "Top-rated dental clinic in Indore offering braces, implants, root canal & smile makeovers. 2000+ happy patients, 4.9★ Google rating. Book today." },
-      { property: "og:title", content: "Saklecha's Dental & Implant Centre — Indore" },
-      { property: "og:description", content: "Painless, modern dental care in Indore. Book your appointment." },
-    ],
-  }),
-  component: HomePage,
-});
 
 const SERVICE_IMAGES: Record<string, string> = {
   "root-canal": clinicTreatment,
@@ -57,10 +45,9 @@ const FAQS = [
   { q: "Is the clinic safe and hygienic?", a: "Absolutely. We follow hospital-grade sterilisation protocols and use single-use disposables wherever possible." },
 ];
 
-function HomePage() {
+export default function HomePage() {
   return (
     <div>
-      {/* HERO */}
       <section className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 pb-16 md:pt-20 md:pb-24 grid md:grid-cols-2 gap-10 items-center">
           <div>
@@ -84,13 +71,12 @@ function HomePage() {
             <div className="mt-8 flex items-center gap-5 text-sm text-muted-foreground">
               <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Painless Care</div>
               <div className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Same-Day Implants</div>
-              <div className="flex items-center gap-1.5 hidden sm:flex"><CheckCircle2 className="w-4 h-4 text-primary" /> EMI Available</div>
             </div>
           </div>
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-transparent rounded-[2rem] blur-2xl" />
             <div className="relative rounded-[2rem] overflow-hidden shadow-[var(--shadow-card)] border border-white/60">
-              <img src={heroSmile} alt="Confident smiling patient at Saklecha's Dental Clinic Indore" width={1280} height={1280} className="w-full h-[420px] md:h-[520px] object-cover" />
+              <img src={heroSmile} alt="Confident smiling patient at Saklecha's Dental Clinic Indore" className="w-full h-[420px] md:h-[520px] object-cover" />
             </div>
             <div className="absolute -bottom-5 -left-3 sm:left-6 bg-white rounded-2xl shadow-[var(--shadow-card)] p-4 flex items-center gap-3 border border-border">
               <div className="w-11 h-11 rounded-full bg-primary-soft flex items-center justify-center"><Smile className="w-6 h-6 text-primary-deep" /></div>
@@ -103,7 +89,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TRUST BAR */}
       <section className="border-y border-border bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-3 gap-4 text-center">
           {[
@@ -119,7 +104,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
@@ -146,7 +130,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* WHY US */}
       <section className="py-16 md:py-24 bg-primary-soft/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
@@ -165,7 +148,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* GALLERY */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between gap-4 flex-wrap">
@@ -185,7 +167,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* ABOUT */}
       <section className="py-16 md:py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
           <div className="rounded-3xl overflow-hidden shadow-[var(--shadow-card)] order-2 md:order-1">
@@ -195,7 +176,7 @@ function HomePage() {
             <div className="text-xs font-semibold uppercase tracking-wider text-primary">About the Clinic</div>
             <h2 className="mt-2 text-3xl md:text-4xl font-bold text-foreground">Specialist-Led Care You Can Trust</h2>
             <p className="mt-4 text-muted-foreground">
-              Located on Pipliyahana Road in Indore, Saklecha's Dental and Braces Clinic & Implant Centre brings together specialist orthodontists, implantologists and cosmetic dentists under one roof. We blend international protocols with warm, personalised care.
+              Located on Pipliyahana Road in Indore, Saklecha's Dental and Braces Clinic & Implant Centre brings together specialist orthodontists, implantologists and cosmetic dentists under one roof.
             </p>
             <ul className="mt-6 space-y-3">
               {["Internationally trained dental team", "Digital diagnostics & treatment planning", "Family-friendly, transparent pricing"].map((l) => (
@@ -209,7 +190,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
       <section className="py-16 md:py-24 bg-primary-soft/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto">
@@ -233,7 +213,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -251,7 +230,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl p-8 md:p-14 text-center text-primary-foreground shadow-[var(--shadow-card)]" style={{ background: "var(--gradient-primary)" }}>

@@ -1,20 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { Phone, MapPin, Clock, MessageCircle, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, MessageCircle } from "lucide-react";
 import { CLINIC } from "@/lib/clinic";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Saklecha's Dental — Pipliyahana Rd, Indore" },
-      { name: "description", content: "Call, WhatsApp or visit Saklecha's Dental & Implant Centre on Pipliyahana Road, Indore. Open Mon–Sat." },
-      { property: "og:title", content: "Contact Saklecha's Dental Indore" },
-      { property: "og:description", content: "Get in touch — call, WhatsApp or visit our Indore clinic." },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
   return (
     <div>
       <section className="py-12 md:py-20" style={{ background: "var(--gradient-hero)" }}>

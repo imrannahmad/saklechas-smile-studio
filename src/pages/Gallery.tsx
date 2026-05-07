@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { X } from "lucide-react";
 import clinicChair from "@/assets/clinic-chair.jpg";
@@ -12,18 +11,6 @@ import conferenceDoctors from "@/assets/conference-doctors.jpg";
 import conferenceGroup from "@/assets/conference-group.jpg";
 import conferenceTeam from "@/assets/conference-team.jpg";
 import heroSmile from "@/assets/hero-smile.jpg";
-
-export const Route = createFileRoute("/gallery")({
-  head: () => ({
-    meta: [
-      { title: "Clinic Gallery — Saklecha's Dental, Indore" },
-      { name: "description", content: "Take a look inside Saklecha's Dental & Implant Centre — modern equipment, hygienic setup and our specialist team." },
-      { property: "og:title", content: "Clinic Gallery — Saklecha's Dental" },
-      { property: "og:description", content: "Modern, welcoming dental clinic in Indore." },
-    ],
-  }),
-  component: GalleryPage,
-});
 
 const IMAGES = [
   { src: clinicChair, alt: "Modern dental chair" },
@@ -39,7 +26,7 @@ const IMAGES = [
   { src: heroSmile, alt: "Confident smile" },
 ];
 
-function GalleryPage() {
+export default function GalleryPage() {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <div>

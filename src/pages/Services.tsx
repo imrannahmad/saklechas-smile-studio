@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle2, Calendar } from "lucide-react";
 import { SERVICES, SERVICE_FAQS } from "@/lib/clinic";
 import heroSmile from "@/assets/hero-smile.jpg";
@@ -9,18 +9,6 @@ import clinicPediatric from "@/assets/clinic-pediatric.jpg";
 import clinicPatient from "@/assets/clinic-patient.jpg";
 import drInternational from "@/assets/dr-international.jpg";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Dental Services in Indore — Saklecha's Dental & Implant Centre" },
-      { name: "description", content: "Braces, dental implants, root canal, teeth whitening, pediatric dentistry & smile makeovers in Indore. Painless, modern dental care." },
-      { property: "og:title", content: "Dental Services in Indore" },
-      { property: "og:description", content: "Complete dental care under one roof at Saklecha's Dental, Indore." },
-    ],
-  }),
-  component: ServicesPage,
-});
 
 const IMAGES: Record<string, string> = {
   "root-canal": clinicTreatment,
@@ -33,7 +21,7 @@ const IMAGES: Record<string, string> = {
   "smile-makeover": heroSmile,
 };
 
-function ServicesPage() {
+export default function ServicesPage() {
   return (
     <div>
       <section className="py-12 md:py-20" style={{ background: "var(--gradient-hero)" }}>

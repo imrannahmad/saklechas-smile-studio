@@ -1,21 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Calendar, MessageCircle, Phone, CheckCircle2 } from "lucide-react";
 import { CLINIC, SERVICES } from "@/lib/clinic";
 
-export const Route = createFileRoute("/book")({
-  head: () => ({
-    meta: [
-      { title: "Book an Appointment — Saklecha's Dental, Indore" },
-      { name: "description", content: "Book your dental appointment in under a minute. Same-day slots usually available at Saklecha's Dental, Indore." },
-      { property: "og:title", content: "Book Appointment — Saklecha's Dental" },
-      { property: "og:description", content: "Quick & easy appointment booking via WhatsApp." },
-    ],
-  }),
-  component: BookPage,
-});
-
-function BookPage() {
+export default function BookPage() {
   const [form, setForm] = useState<{ name: string; phone: string; service: string; date: string; note: string }>({ name: "", phone: "", service: SERVICES[0].title, date: "", note: "" });
 
   function submit(e: React.FormEvent) {

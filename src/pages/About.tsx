@@ -1,21 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { CheckCircle2, Award, Users, Stethoscope, ArrowRight } from "lucide-react";
 import { CLINIC } from "@/lib/clinic";
 import teamDoctors from "@/assets/team-doctors.jpg";
 import drInternational from "@/assets/dr-international.jpg";
 import drConference from "@/assets/dr-conference.jpg";
-
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Saklecha's Dental & Implant Centre — Indore" },
-      { name: "description", content: "Meet the specialist team behind Indore's most trusted dental, braces and implant clinic. Internationally trained, family-friendly care." },
-      { property: "og:title", content: "About Saklecha's Dental — Indore" },
-      { property: "og:description", content: "Specialist-led dental care with international training and modern protocols." },
-    ],
-  }),
-  component: AboutPage,
-});
 
 const VALUES = [
   { icon: Stethoscope, title: "Specialist-Led", desc: "MDS specialists in orthodontics, implantology and cosmetic dentistry." },
@@ -23,7 +11,7 @@ const VALUES = [
   { icon: Users, title: "Family-Friendly", desc: "Gentle care for kids, adults and seniors — all under one roof." },
 ];
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <div>
       <section className="py-12 md:py-20" style={{ background: "var(--gradient-hero)" }}>
@@ -45,7 +33,7 @@ function AboutPage() {
               Located on Pipliyahana Road, Indore, Saklecha's Dental and Braces Clinic & Implant Centre is led by a team of specialist dentists with over 5 years of clinical excellence. We've treated 2000+ happy patients with painless, ethical, and result-driven dentistry.
             </p>
             <p className="mt-3 text-muted-foreground">
-              Our philosophy is simple — honest advice, modern equipment, and treatment plans built around YOU. From a child's first dental visit to advanced full-mouth implants, every patient gets the same level of attention.
+              Our philosophy is simple — honest advice, modern equipment, and treatment plans built around YOU.
             </p>
             <ul className="mt-6 space-y-3">
               {["Digital X-ray & RVG diagnostics", "Single-sitting RCT with rotary endodontics", "Same-day dental implants", "Hospital-grade sterilisation"].map((l) => (
