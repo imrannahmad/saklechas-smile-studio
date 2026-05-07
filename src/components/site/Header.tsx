@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { CLINIC } from "@/lib/clinic";
@@ -28,15 +28,18 @@ export function Header() {
 
         <nav className="hidden md:flex items-center gap-1">
           {links.map((l) => (
-            <Link
+            <NavLink
               key={l.to}
               to={l.to}
-              activeOptions={{ exact: l.to === "/" }}
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary rounded-md transition-colors"
-              activeProps={{ className: "px-3 py-2 text-sm font-semibold text-primary rounded-md" }}
+              end={l.to === "/"}
+              className={({ isActive }) =>
+                isActive
+                  ? "px-3 py-2 text-sm font-semibold text-primary rounded-md"
+                  : "px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary rounded-md transition-colors"
+              }
             >
               {l.label}
-            </Link>
+            </NavLink>
           ))}
         </nav>
 
@@ -58,16 +61,19 @@ export function Header() {
         <div className="md:hidden border-t border-border/60 bg-background">
           <div className="px-4 py-3 flex flex-col gap-1">
             {links.map((l) => (
-              <Link
+              <NavLink
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                activeOptions={{ exact: l.to === "/" }}
-                className="px-3 py-3 rounded-lg text-base font-medium text-foreground hover:bg-primary-soft"
-                activeProps={{ className: "px-3 py-3 rounded-lg text-base font-semibold text-primary bg-primary-soft" }}
+                end={l.to === "/"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "px-3 py-3 rounded-lg text-base font-semibold text-primary bg-primary-soft"
+                    : "px-3 py-3 rounded-lg text-base font-medium text-foreground hover:bg-primary-soft"
+                }
               >
                 {l.label}
-              </Link>
+              </NavLink>
             ))}
             <Link to="/book" onClick={() => setOpen(false)} className="mt-2 inline-flex items-center justify-center px-4 py-3 rounded-full bg-gradient-to-r from-primary to-primary-deep text-primary-foreground font-semibold">
               Book Appointment

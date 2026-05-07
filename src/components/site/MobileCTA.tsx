@@ -1,5 +1,5 @@
 import { Phone, Calendar } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { CLINIC } from "@/lib/clinic";
 
 export function MobileCTA() {

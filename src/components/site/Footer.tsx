@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Phone, MapPin, Clock, Instagram, MessageCircle } from "lucide-react";
 import { CLINIC } from "@/lib/clinic";
 
